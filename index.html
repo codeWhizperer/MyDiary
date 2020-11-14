@@ -6,11 +6,108 @@
         <title>MyDiary</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="icon" href="images/favicon-32x32.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <link rel="stylesheet" href="styles//index.css">
     </head>
     <body>
-    
+        <header>
+            <div id="logo">
+                <img width="" height="auto" src="" alt="logo">
+            </div>
+            
+            <!--Mobile Navigation-->
+            <div id="mobile-nav" class="dropdown">
+                <button class="dropbtn"><i class="las la-bars"></i></button>
+                <div class="dropdown-content">
+                  <a href="#">Sign In</a>
+                  <a href="#">Sign Up</a>
+                  <a href="#">About</a>
+                  <a href="#">Contact</a>
+                </div>
+              </div>
+            
+                <nav id="desktop-nav">
+                    <ul>
+                        <li class="nav-item"><a href=''>Sign In<a/</li>
+                        <li class="nav-item"><a href=''>Sign Up<a/</li>
+                        <li class="nav-item"><a href=''>About<a/</li>
+                        <li class="nav-item"><a href=''>Contact<a/</li>
+                    </ul>
+                </nav>
+        </header>
+
+        <div id="intro-message">
+            <div class="image-caption">
+                <h1>Ready To Start Writing? Sign Up!</h1>
+                 <a class="start" href="">GET STARTED</a>
+            </div>
+        </div>
+
+
+              <div id="About">
+
+                <h4>What are you writing for?</h4>
+                <p>Whether you’re looking for a tool to record your daily emotions and activities in a reflective journal, keep track of milestones in a food diary or pregnancy journal, or even record your dreams in a dream journal, MyDiary has you covered.
+
+                    MyDiary gives you all the tools you need to focus on the ideas you want to preserve, rather than the process of writing itself.</p>
+              </div>
+
+        <div id="features">
+            <div id="lock">
+                <div class="fa-lock">
+                    <i style="font-size: 50px;" class="las la-user-lock"></i>
+                    <p>100% Private</p>
+                </div>
+                <div class="fa-lock-text">
+                <h3>Designed To Focus On Privacy</h3>
+                </div>
+            </div>
+            <div id="phone">
+                <div class="fa-location">
+                    <i style="font-size: 50px;" class="las la-map-marker"></i>
+                    <p>Available Everywhere</p>
+                </div>
+                <div  class="fa-location-text">
+                <h3>Share Your Thoughts On The Go.</h3>
+                </div>
+            </div>
+            
+            <div id="journal">
+                <div class="fa-jornal">
+                    <i style="font-size: 50px;"  class="las la-journal-whills"></i>
+                    <p>Available Everywhere</p>
+                </div>
+                <div class="fa-pen-text">
+                <h3>Never Forget To write.</h3>
+                </div>
+            </div>
+
+        </div>
         
-        <script src=""></script>
+    
+        <footer>
+            <div class="social-links">
+                <a href=""><img class="social-link" src="images/icon-facebook.svg" alt="icon-facebook"></a>
+                <a href=""><img class="social-link" src="images/icon-instagram.svg" alt="icon-instagram"></a>
+                <a href=""><img class="social-link" src="images/icon-pinterest.svg" alt="icon-pinterest"></a>
+                <a href=""><img class="social-link" src="images/icon-twitter.svg" alt="icon-twitter"></a>
+            </div>
+            <div id="project">
+                <p>MyDiary By Adegbite Ademola (c) 2020</p>
+            </div>
+            <div id="phone-number">
+                <i class="lab la-whatsapp"><p>+2348104750773</p></i>
+            </div>
+        </footer>
+        
+        <script src="lib/index.js"></script>
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+          </div>
     </body>
 </html>
