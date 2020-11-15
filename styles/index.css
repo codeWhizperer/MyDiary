@@ -129,7 +129,7 @@ display: none;
 #lock{
     text-align: center;
 }
-#phone{
+#location{
     text-align: center;
 }
 #journal{
@@ -319,8 +319,27 @@ color: #fff;
      flex-direction: column;
      align-items: center;
  }
+ #features #lock{
+   margin-bottom: 50px;
+ }
+ #features #location{
+  margin-bottom: 50px;
+}
+
+
  footer{
      flex-direction: column;
      align-items: center;
+     padding: 50px 50px;
+ }
+ footer .social-links{
+margin: 10px;
+ }
+ footer #project{
+   margin: 20px;
+   text-align: center;
+ }
+ footer #phone-number{
+   margin: 20px;
  }
 }
