@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#particles-js {
+    background: black;
+        position:fixed;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        z-index:0; 
+      
+}
+#overlay{
+    position: relative;
+}
+
+form{
+    color: #fff;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #808080;
+    margin-right: 20px;
+}
+.username{
+    margin-right: 20px;
+    font-size: 2rem;
+}
+
+.email{
+    margin-right: 70px;
+    font-size: 2rem;
+}
+.password{
+    margin-right: 20px;
+    font-size: 2rem;
+}
+input[type=text]{
+    width: 50%;
+    padding: 20px 20px 20px 20px;
+}
+input[type=password]{
+    width: 50%;
+    padding: 20px 20px 20px 20px;
+}
+input::placeholder{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+input[type=submit]{
+    font-size: 2rem;
+    text-align: center;
+    background-color: orangered;
+    opacity: 0.3;
+    color: #fff;
+    text-transform: uppercase;
+}
+input[type=submit]:hover{
+    opacity: 1;
+}
+h3 a{
+    text-decoration: none;
+    color: #808080;
+}
+h3 a:hover{
+    color:#ff4500;
+}
+
+
+@media screen and (max-width:480px){
+    input[type=text]{
+        width: 90%;
+        padding:  15px 15px ;
+    }   
+    input[type=password]{
+        width: 90%;
+        padding:  15px 15px;
+    }
+}
