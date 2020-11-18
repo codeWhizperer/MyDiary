@@ -2,19 +2,23 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
 
 
-#particles-js {
-    background: black;
-        position:fixed;
-        top:0;
-        right:0;
-        bottom:0;
-        left:0;
-        z-index:0; 
-      
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 #overlay{
     position: relative;
@@ -37,7 +41,7 @@ nav ul li{
 }
 nav ul li a{
     text-decoration: none;
-    color: #808080;
+    color: #ffffff;
     margin-right: 20px;
 }
 .username{
@@ -79,23 +83,15 @@ input[type=submit]:hover{
 }
 h3 a{
     text-decoration: none;
-    color: #808080;
+    color: #ffffff;
 }
 h3 a:hover{
     color:#ff4500;
 }
 
 
-@media screen and (max-width:480px){
-    input[type=text]{
-        width: 90%;
-        padding:  15px 15px ;
-    }   
-    input[type=password]{
-        width: 90%;
-        padding:  15px 15px;
-    }
-}
+/*OnPageLoader  */
+
 #loader-wrapper {
     position:fixed;
     top:0;
@@ -204,3 +200,15 @@ h3 a:hover{
     transform:translateY(-100%);
     transition: all 0.3s 1s ease-out;
   }
+
+
+@media screen and (max-width:480px){
+    input[type=text]{
+        width: 90%;
+        padding:  15px 15px ;
+    }   
+    input[type=password]{
+        width: 90%;
+        padding:  15px 15px;
+    }
+}
