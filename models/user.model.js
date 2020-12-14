@@ -1,6 +1,7 @@
 //user dummyData
 const database = {
     users:[
+//dummy datas        
         {
             "firstname": "Adegbite",
             "lastname": "Ademola",
@@ -15,13 +16,7 @@ const database = {
             "email": "Max0jay@gmail.com",
             "password": "0409199"
         },
-        {
-            "firstname": "Makinde",
-            "lastname": "Oluwasegun",
-            "username": "segxy",
-            "email": "segun@gmail.com",
-            "password": "love"
-        }
+
 
     ]
 }

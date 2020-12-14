@@ -6,11 +6,13 @@ const route = express.Router();
 
 
 
-
+//sigup route
 route.post('/signup', async(req, res)=>{
     const {firstname, lastname, username, email, password} = req.body
     let match = false
+    //loop through dummyDatabase
 for(let i =0; i < database.users.length; i++){
+ // if email === database.user[i].email
   if(email === database.users[i].email){
     match = true
    return res.json({
@@ -19,6 +21,7 @@ for(let i =0; i < database.users.length; i++){
     })
   }
 }
+//if email ! === database.user[i].email
 if(!match){
   database.users.push({
     firstname:firstname,
@@ -31,12 +34,6 @@ if(!match){
     status: "Success",
     message: "User Created Successfully"
   })
-}
-    
+}  
 })
-
-//pseudocode => SIGNUP ROUTE
-
-// After user has input details to register , grab email and cross check with database , if emailMatch return 
-// 'User already exist' : 'return welcome new user'
 module.exports = route

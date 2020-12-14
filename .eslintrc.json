@@ -1,3 +1,4 @@
+//eslint airbnb
 {
-    "extends": "airbnb "
+    "extends": "airbnb"
 }

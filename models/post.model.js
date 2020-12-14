@@ -1,6 +1,7 @@
 //User posts dummmy data
 const database = {
     Posts: [
+ //dummy datas       
         {
             id:0,
             title: "About 2021",
@@ -12,14 +13,7 @@ const database = {
             title: "How I Met Your Mother",
             description:"Keep calm and listen to me",
             createdOn: Date()
-        },
-        {
-            id:2,
-            title: "How I Met Your Mother",
-            description:"Keep calm and listen to me",
-            createdOn: Date()
         }
     ]
 }
-
 module.exports = database 
