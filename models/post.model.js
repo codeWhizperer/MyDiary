@@ -1,3 +1,4 @@
+//User posts dummmy data
 const database = {
     Posts: [
         {

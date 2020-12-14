@@ -1,3 +1,4 @@
+//View all entry
 const express = require('express')
 const database = require('../models/post.model')
 const route = express.Router()

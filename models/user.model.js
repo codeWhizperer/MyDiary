@@ -1,3 +1,4 @@
+//user dummyData
 const database = {
     users:[
         {

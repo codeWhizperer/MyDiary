@@ -1,3 +1,4 @@
+//Add new entry
 const express = require('express')
 const route = express.Router()
 const database = require('../models/post.model')
