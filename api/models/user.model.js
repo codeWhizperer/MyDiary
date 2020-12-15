@@ -1,3 +1,4 @@
+//user dummyData
 const database = {
     users:[
         {
@@ -21,11 +22,8 @@ const database = {
             "email": "segun@gmail.com",
             "password": "love"
         }
-
     ]
 }
-
-
 module.exports = database
 
 
