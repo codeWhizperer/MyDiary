@@ -1,3 +1,4 @@
+//User Posts dummyData
 const database = {
     Posts: [
         {
@@ -20,5 +21,4 @@ const database = {
         }
     ]
 }
-
 module.exports = database 
