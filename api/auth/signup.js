@@ -2,35 +2,23 @@
 const express = require('express');
 const database = require('../models/user.model')
 const route = express.Router();
-//signUp route
-route.post('/signup', async(req, res)=>{
-    const {firstname, lastname, username, email, password} = req.body
-    let match = false
-//loop through database, if req.body.email=== database.users[i].email return user already exist    
-for(let i =0; i < database.users.length; i++){
-  if(email === database.users[i].email){
-    match = true
-   return res.json({
-      status: 400,
-      message: "User Already Exist"
-    })
-  }
+const bcrypt = require('bcrypt');
+
+
+route.post("/signup", async (req,res) => {
+const {firstname, lastname, username, email, password} = req.body;
+const data = database.users.find((user) => email === user.email)
+if(data){
+  return res.json({status:400, message: "User Already Exist"})
 }
-// if not , add new user to the end of the database array
-if(!match){
-  database.users.push({
-    firstname:firstname,
-    lastname:lastname,
-    username:username,
-    email:email,
-    password:password
-  })
-  return res.json({
-    status: "Success",
-    message: "User Created Successfully"
-  })
-}    
+if(!data){
+  const salt = await bcrypt.genSalt(10)
+  const passwordHash = await bcrypt.hash(password, salt)
+  database.users.push({firstname:firstname, lastname:lastname, username:username, email:email,password:passwordHash})
+ return res.json({status:"Success", message:"User successfully Registered!"})
+}
 })
+
 module.exports = route
 
 //pseudocode => SIGNUP ROUTE

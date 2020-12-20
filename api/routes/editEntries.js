@@ -11,9 +11,7 @@ const database = require('../models/post.model')
  for(let i = 0; i < database.Posts.length; i++){
  if(id == database.Posts[i].id){
  match = true
- let updatedEntry = database.Posts[i].id
-  updatedEntry = ({id:id, title:title, description:description, createdOn:Date()})
-  database.Posts.splice(id , 1, updatedEntry)
+ let updatedEntry = newFunction(i, id, title, description);
  return res.json({status:"Success entry successfully updated!", data:updatedEntry})
  }
  }
@@ -22,6 +20,27 @@ const database = require('../models/post.model')
  }
  })
 
+
+
+
+
+//  route.patch('/:id', (req,res)=>{
+//  const {id} = req.params
+//  const {title, description} = req.body
+//  let match = false
+//  for(let i = 0; i < database.Posts.length; i++){
+//  if(id == database.Posts[i].id){
+//  match = true
+//  let updatedEntry = database.Posts[i].id
+//   updatedEntry = ({id:id, title:title, description:description})
+//   database.Posts.splice(id , 1, updatedEntry)
+//  return res.json({status:"Success entry successfully updated!", data:updatedEntry})
+//  }
+//  }
+//  if(!match){
+//    return res.json('Cannot find entry')
+//  }
+//  })
 
 // select id of array and equate it to data coming from frontend
 
@@ -44,3 +63,10 @@ const database = require('../models/post.model')
 //   }
 
 module.exports = route
+
+function newFunction(i, id, title, description) {
+  let updatedEntry = database.Posts[i].id;
+  updatedEntry = ({ id: id, title: title, description: description });
+  database.Posts.splice(id, 1, updatedEntry);
+  return updatedEntry;
+}

@@ -3,24 +3,18 @@ const express = require('express')
 const route = express.Router()
 const database = require('../models/post.model')
 
-route.delete('/:id', (req, res) =>{
-let match = false
-const {id} = req.params
-for(let i = 0; i < database.Posts.length; i++){
-if( id == database.Posts[i].id){
- match = true
-database.Posts.splice(id, 1)
-return res.json({status:"success", message:'entry deleted'})
-}
-}
-//
-if(!match){
-    return res.json('Cannot delete entry')
-}
+
+
+route.delete('/:id', (req, res) => {
+    const {id} = req.params;
+    let match = database.Posts.findIndex(post => post.id == id)
+    if(match < 0) return res.status(404).json({status:"Error", message:"Entry ID not found"})
+    database.Posts.splice(match, 1)
+    return res.json({status:"Success", message:"Entry Deleted"})
 })
 
 
-
+ 
 
 
 
@@ -31,3 +25,8 @@ if(!match){
 
 
 module.exports = route
+
+function newFunction(id) {
+    const data = database.Posts.forEach((post) => post.id == id);
+    console.log(data);
+}

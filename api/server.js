@@ -6,19 +6,19 @@ require('dotenv').config()
 const port = process.env.PORT || 3000
 //Middleware
 app.use(express.json())
-const database = require('../api/models/user.model')
-const post = require('../api/models/post.model')
-const signIn = require('../api/auth/signin')
-const signUp = require('../api/auth/signup')
-const addEntries = require('../api/routes/addEntries')
-const entries = require('../api/routes/entries')
-const editEntries = require('../api/routes/editEntries')
-const deleteEntries = require('../api/routes/deleteEntries')
-const entryId = require('../api/routes/entryId')
+const database = require('./models/user.model')
+const post = require('./models/post.model')
+const signIn = require('./auth/signin')
+const signUp = require('./auth/signup')
+const addEntries = require('./routes/addEntries')
+const entries = require('./routes/entries')
+const editEntries = require('./routes/editEntries')
+const deleteEntries = require('./routes/deleteEntries')
+const entryId = require('./routes/entryId');
 app.get('/', (req, res)=>{
     res.json({
         status:200,
-        data: post.Posts
+        data: post
     })
 })
 
