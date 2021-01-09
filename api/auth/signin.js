@@ -2,26 +2,26 @@
 const express = require('express')
 const database = require('../models/user.model')
 const route = express.Router();
+const bcrypt = require("bcrypt")
 
-route.post('/signin', async(req, res)=>{
+route.post('/signin', async (req, res) => {
     const {username, email, password} = req.body
-     let match = false
-//loop through database and check if if email && password === database.users[i].email && database.users[i].password
-for(let i =0; i < database.users.length; i++){
-  if(email === database.users[i].email && password === database.users[i].password){
+    let match = false;
+for(let i = 0; i < database.users.length; i++){
+const usermail = database.users[i].email 
+const db = database.users[i].password
+if(email === usermail && await bcrypt.compare(password, db)){
     match = true
-   return res.json({
-      status: "Success",
-      message: `Welcome Back ${username}`
-    })
-  }
+    return res.json({status:"Success", message:`Welcome back ${username}`})
 }
-//if email ! === database.users[i].email && password !=== database.users[i].password
-if(!match){
-  return res.json({
-    status: 400,
-    message: "Invalid Entry"
-  })
-}  
+}
+ if(!match){
+     return res.json({status:400, message:"Invalid, Try Again"})
+ }
 })
+
+
 module.exports = route
+
+// check if incoming email === database.users.email
+// if true , compare password to database.password(bcrypt.compare =>true|| false)

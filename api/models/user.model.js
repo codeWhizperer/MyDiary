@@ -1,27 +1,13 @@
 //user dummyData
 const database = {
-    users:[
-        {
-            "firstname": "Adegbite",
-            "lastname": "Ademola",
-            "username": "Adegbite.io",
-            "email": "Adegbiteademola1999@gmail.com",
-            "password": "1234"
-        },
-        {
-            "firstname": "Makinde",
-            "lastname": "Oluseun",
-            "username": "oluwaseun",
-            "email": "Max0jay@gmail.com",
-            "password": "0409199"
-        },
-        {
-            "firstname": "Makinde",
-            "lastname": "Oluwasegun",
-            "username": "segxy",
-            "email": "segun@gmail.com",
-            "password": "love"
-        }
+    users:[ 
+       {
+        "firstname": " Ademola",
+        "lastname": "Ademola Kelvin",
+        "username": "Adegbite.io",
+        "email": "Adegbite1999@gmail.com",
+        "password": "$2b$10$6DVZp7r04zkxmn/3Um4JAuElRpyvw9HI8RPY0yls2mI8HgXcCXuXu"
+       }
     ]
 }
 module.exports = database
