@@ -1,10 +1,8 @@
 language: node_js
 node_js:
-  - 14.15.1
-  14.15.2
-  14.15.3
+  - "stable"
 install:
   - npm ci
   
 script:
-  - npm test
+  - npm run test
