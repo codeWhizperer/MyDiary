@@ -9,13 +9,13 @@ route.post("/signup", async (req,res) => {
 const {firstname, lastname, username, email, password} = req.body;
 const data = database.users.find((user) => email === user.email)
 if(data){
-  return res.json({status:400, message: "User Already Exist"})
+  return res.staus(400).json({message: "User Already Exist"})
 }
 if(!data){
   const salt = await bcrypt.genSalt(10)
   const passwordHash = await bcrypt.hash(password, salt)
   database.users.push({firstname:firstname, lastname:lastname, username:username, email:email,password:passwordHash})
- return res.json({status:"Success", message:"User successfully Registered!"})
+ return res.status(201).json({status:"Success", message:"User successfully Registered!"})
 }
 })
 

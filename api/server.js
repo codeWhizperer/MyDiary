@@ -1,5 +1,4 @@
 const express = require('express')
-
 const app = express();
 require('dotenv').config()
 
@@ -16,13 +15,10 @@ const editEntries = require('./routes/editEntries')
 const deleteEntries = require('./routes/deleteEntries')
 const entryId = require('./routes/entryId');
 app.get('/', (req, res)=>{
-    res.json({
-        status:200,
-        data: post
-    })
+    res.status(200).json('Welcome to Homepage')
 })
 
-//middleware auth route
+// middleware auth route
 app.use('/auth', signIn)
 app.use('/auth', signUp)
 app.use('/api/v1', entries)
@@ -36,9 +32,7 @@ app.get('*', (req,res)=>{
 
 
 
-
-
-
 app.listen(port , (req, res)=>{
     console.log(`Server is runnung on ${port}`)
 })
+module.exports = app;

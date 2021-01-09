@@ -12,11 +12,11 @@ const database = require('../models/post.model')
  if(id == database.Posts[i].id){
  match = true
  let updatedEntry = newFunction(i, id, title, description);
- return res.json({status:"Success entry successfully updated!", data:updatedEntry})
+ return res.status(200).json({status:"Success entry successfully updated!", data:updatedEntry})
  }
  }
  if(!match){
-   return res.json('Cannot find entry')
+   return res.status(404).json('Cannot find entry')
  }
  })
 

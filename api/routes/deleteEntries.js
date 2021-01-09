@@ -10,23 +10,10 @@ route.delete('/:id', (req, res) => {
     let match = database.Posts.findIndex(post => post.id == id)
     if(match < 0) return res.status(404).json({status:"Error", message:"Entry ID not found"})
     database.Posts.splice(match, 1)
-    return res.json({status:"Success", message:"Entry Deleted"})
+    return res.status(200).json({status:"Success", message:"Entry Deleted"})
 })
 
 
  
 
-
-
-
-
-
-
-
-
 module.exports = route
-
-function newFunction(id) {
-    const data = database.Posts.forEach((post) => post.id == id);
-    console.log(data);
-}
