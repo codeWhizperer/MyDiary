@@ -12,11 +12,11 @@ const usermail = database.users[i].email
 const db = database.users[i].password
 if(email === usermail && await bcrypt.compare(password, db)){
     match = true
-    return res.json({status:"Success", message:`Welcome back ${username}`})
+    return res.status(200).json({status:"Success", message:`Welcome back ${username}`})
 }
 }
  if(!match){
-     return res.json({status:400, message:"Invalid, Try Again"})
+     return res.status(400).json({message:"Invalid, Try Again"})
  }
 })
 
