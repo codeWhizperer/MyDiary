@@ -5,6 +5,6 @@ before_install:
   cd api
 install:
   - npm ci
-  
+YARN_GPG=no
 script:
   - npm run test
