@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 require('dotenv').config()
 
-const port = process.env.PORT || 3000
+const port =5000
 //Middleware
 app.use(express.json())
 const database = require('./models/user.model')
