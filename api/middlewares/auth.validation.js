@@ -1,6 +1,14 @@
-const Joi = require('joi')
+ const Joi = require('joi')
 
-const validate = {
+ const validate = {
+    
+    login:(username, password) =>{
+        const Schema = Joi.object({
+            username: Joi.string().min(6).required(),
+            password: Joi.string().min(5)
+        })
+return Schema.validate({username, password})
+    },
     signup:(firstname, lastname ,username ,email , password) =>{
         const Schema = Joi.object({
             firstname: Joi.string().min(3).required(),
@@ -10,16 +18,6 @@ const validate = {
             password: Joi.string().min(5).required()
         })
 return Schema.validate({firstname, lastname , username, email, password})
-    },
-    
-    
-    login:(username, password) =>{
-        const Schema = Joi.object({
-            username: Joi.string().min(6).required(),
-            password: Joi.string().min(5)
-        })
-return Schema.validate({username, password})
-    }
-    
+    }   
 }
-module.exports = validate;
+ module.exports = validate;
