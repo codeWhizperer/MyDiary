@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const pool = require('../configuration/config');
-const validate = require('../middleware/auth.validation')
+const pool = require('../config/config');
+const validate = require('../middlewares/auth.validation')
 require('crypto').randomBytes(64).toString('hex')
 require('dotenv').config()
 

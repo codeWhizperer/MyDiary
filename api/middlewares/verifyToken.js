@@ -1,4 +1,4 @@
-const pool = require('../configuration/config')
+const pool = require('../config/config')
 const  jwt = require('jsonwebtoken')
 require('dotenv').config()
 

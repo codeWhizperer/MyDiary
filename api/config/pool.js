@@ -1,4 +1,11 @@
-const pool = require('../configuration/config')
+
+
+
+
+
+
+
+const pool = require('./config')
 
 const createUserTable = () =>{
 const userCreateQuery = `

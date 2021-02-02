@@ -1,5 +1,5 @@
 const { response, request } = require('express');
-const pool = require('../configuration/config')
+const pool = require('../config/config')
 
 const create = async (request, response) =>{
     const createQuery = `INSERT INTO diary(title, description, user_id) VALUES($1, $2, $3) RETURNING *`;
