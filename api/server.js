@@ -1,31 +1,27 @@
+const { request } = require('express');
 const express = require('express')
+var bodyParser = require('body-parser')
 const app = express();
 require('dotenv').config()
 
 const port =5000
 //Middleware
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 app.use(express.json())
-const database = require('./models/user.model')
-const post = require('./models/post.model')
-const signIn = require('./auth/signin')
-const signUp = require('./auth/signup')
-const addEntries = require('./routes/addEntries')
-const entries = require('./routes/entries')
-const editEntries = require('./routes/editEntries')
-const deleteEntries = require('./routes/deleteEntries')
-const entryId = require('./routes/entryId');
+const path = require('./routes/index')
+
+
 app.get('/', (req, res)=>{
     res.status(200).json('Welcome to Homepage')
 })
 
 // middleware auth route
-app.use('/auth', signIn)
-app.use('/auth', signUp)
-app.use('/api/v1', entries)
-app.use('/api/v1/entry', addEntries)
-app.use('/api/v1/entry', editEntries)
-app.use('/api/v1/entry', deleteEntries)
-app.use('/api/v1/entry', entryId)
+app.use('/api/v1/', path)
 app.get('*', (req,res)=>{
     res.send('Page doesn"/t exist' )
 })
