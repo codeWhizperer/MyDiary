@@ -6,11 +6,11 @@ const create = async (request, response) =>{
     const values = [request.body.title, request.body.description, request.user.id];
     try {
        const data = await pool.query(createQuery, values);
-return response.status(201).send({data: data.rows[0], message: 'Entry Created Successfully!'});
+return response.status(201).json({data: data.rows[0], message: 'Entry Created Successfully!'});
        
     } catch (error) {
         if(error){
-            return response.status(400).send(error);
+            return response.status(400).json(error);
         }
     }
     }
@@ -20,10 +20,10 @@ return response.status(201).send({data: data.rows[0], message: 'Entry Created Su
         const findQuery = `SELECT * FROM diary WHERE user_id = $1`;
         try {
             const {rows, rowCount} = await pool.query(findQuery, [request.user.id]);
-            return response.status(200).send({rows, rowCount})
+            return response.status(200).json({rows, rowCount})
         } catch (error) {
             if(error){
-              return   response.status(404).send(error);
+              return   response.status(404).json(error);
             }
         }
     }
@@ -33,7 +33,7 @@ return response.status(201).send({data: data.rows[0], message: 'Entry Created Su
         try {
             const {rows} = await pool.query(findQuery, [request.params.id, request.user.id]);
             if (!rows[0]) {
-                return res.status(404).send({'message': 'reflection not found'});
+                return res.status(404).json({'message': 'reflection not found'});
               }
 return response.status(200).json(rows[0])
             
@@ -48,11 +48,11 @@ const updateOne = async (request, response) =>{
     try {
         const {rows} = await pool.query(findQuery, [request.params.id, request.user.id]);
         if(!rows[0]){
-            return response.status(404).send({message: 'Diary entry not found!'})
+            return response.status(404).json({message: 'Diary entry not found!'})
         }
         const values = [request.body.title, request.body.description, request.params.id, request.user.id];
 const data = await pool.query(updateQuery, values);
-return response.status(200).send({message:data.rows[0]});
+return response.status(200).json({message:data.rows[0]});
         
     } catch (error) {
         if(error){
@@ -66,12 +66,12 @@ const deleteOne = async (request, response) =>{
     try {
         const {rows} = await pool.query(deleteQuery, [request.params.id, request.user.id]);
         if(!rows[0]){
-            return response.status(404).send({message: 'diary entry not found'});
+            return response.status(404).json({message: 'diary entry not found'});
         }
-        return response.status(200).send({message: 'Entry Deleted!'})
+        return response.status(200).json({message: 'Entry Deleted!'})
     } catch (error) {
         if(error){
-            return response.status(404).send({message: error});
+            return response.status(404).json({message: error});
         }
     }
 }
