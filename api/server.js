@@ -22,6 +22,7 @@ app.get('/', (req, res)=>{
 
 // middleware auth route
 app.use('/api/v1/', path)
+
 app.get('*', (req,res)=>{
     res.send('Page doesn"/t exist' )
 })
