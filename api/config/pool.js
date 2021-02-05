@@ -48,21 +48,6 @@
  })
  };
 
-// Drop Table
-
- const dropUserTable = () =>{
-     const userDropQuery = 'DROP TABLE IF EXISTS users'
-     pool.query(userDropQuery)
-     .then((response)=>{
-         console.log(response);
-         pool.end();
-     })
-     .catch((error)=>{
-         console.log(error)
-         pool.end();
-     })
- }
- 
  const dropUserTable = () =>{
      const userDropQuery = 'DROP TABLE IF EXISTS users'
      pool.query(userDropQuery)
