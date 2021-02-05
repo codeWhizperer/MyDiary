@@ -66,7 +66,7 @@ return response.status(201).send({data: data.rows[0], message: 'Entry Created Su
     }
 
     const deleteOne = async (request, response) =>{
-        const deleteQuery = `DELETE * FROM diary WHERE id =$1 AND user_id = $2 RETURNING *`;
+        const deleteQuery = `DELETE  FROM diary WHERE id =$1 AND user_id = $2 RETURNING *`;
         try {
             const {rows, rowCount} = await pool.query(deleteQuery, [request.params.id, request.user.id]);
             if(!rows[0]){
