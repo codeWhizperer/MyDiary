@@ -1,5 +1,5 @@
 const { response, request } = require('express');
-const pool = require('../config/config')
+const pool = require('../configuration/config')
 
 
 const getOne = async (request,response) =>{

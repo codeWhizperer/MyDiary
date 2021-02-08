@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 
-const Authentication = require('../controller/auth')
-const Auth = require('../middlewares/verifyToken')
-const Diary = require('../controller/diary')
+const Authentication = require('../controllers/auth')
+const Auth = require('../middleware/verifyToken')
+const Diary = require('../controllers/diary')
 
 // path
 router.post('/users/signup', Authentication.signup);
