@@ -13,7 +13,7 @@ app.use(
   })
 )
 app.use(express.json())
-const path = require('./route/index')
+const path = require('./routes/index')
 
 
 app.get('/', (req, res)=>{
