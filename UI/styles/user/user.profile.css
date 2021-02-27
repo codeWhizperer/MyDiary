@@ -1,0 +1,51 @@
+.user__profile img{
+    cursor: pointer;
+    border: 2px solid #05668D;
+    border-radius: 50%;
+    width: 250px;
+    min-width: 140px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.user__profile__container{
+    margin-bottom: 2rem;
+}
+
+.user__username{
+    margin-bottom: 2rem;
+}
+
+.user__profile__username{
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+}
+.user__profile__email{
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+}
+
+.user__profile__email{
+    margin-top: 1rem;
+}
+.user__profile__username{
+    margin-top: 1rem;
+}
+.btn{
+    text-align: center;
+}
+.btn--update{
+    margin-right: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #0275d8;
+    padding: 1rem;
+    color: #fff;
+    border-radius: .5rem;
+}

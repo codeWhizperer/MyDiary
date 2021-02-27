@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Diary Entries</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font style -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<!--  -->
+<!-- font-awesome -->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<!--  -->
+        <link rel="stylesheet" href="../../styles/user/user.index.css">
+        <link rel="stylesheet" href="../../styles/user/user.profile.css">
+    </head>
+    <body> 
+        <header class="header">
+            <div class="header__logo">
+                <img class="logo--img" src="" alt="diary-logo">
+            </div>
+            <nav class="header__nav nav--dropdown">
+                <span class="nav--menu"><i class="las la-bars"></i></span>
+                <ul class="nav--list dropdown--content">
+                    <li><a href="../user/user.profile.html"><span><i class="lar la-user icon"></i></i></span>Dashboard</a></li>
+                    <li><a href="../../../index.html"><span><i class="las la-sign-out-alt icon"></i></span>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+      <div class="container">
+          <div class="sidebar">
+              <nav class="sidebar__nav">
+                  <ul class="sidebar__nav--bar">
+                      <li><a href="../../index.html">Home</a></li>
+                      <li><a href="../user/user.index.html">Entries</a></li>
+                      <li><a href="../user/addPost.html">Add Post</a></li>
+                      <li><a href="">Settings</a></li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="user">
+              <div class="user__container">
+                <div class="user__profile__container">
+                    <div class="user__profile">
+                        <img class="sticky" src="https://www.svgrepo.com/show/63321/avatar.svg" alt="Avatar">
+                    </div>
+                    <fieldset>Upload Your profile Picture <br>
+                        <input type="file" name="img_avatar" id="img"> 
+                    </fieldset>
+                        
+                   
+                </div>
+                <div class="user__details">
+                    <div class="user__username">
+                        <span><b>Username</b></span>
+                        <p class="user__profile__username" contenteditable="true" >John doe</p>
+                    </div>
+                  <div class="user__email">
+                      <span><b>Email</b></span>
+        <p class="user__profile__email">JohnDoe@gmail.com</p>
+                  </div>
+                  <div class="btn btn-update" >
+                      <span><a class="btn--update" href="">Update</a></span>
+                     
+                  </div>
+                </div>
+                
+              </div>
+              
+           
+           
+        
+        </div>
+      </div>
+
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -3,66 +3,76 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sign Up|Register</title>
+        <title>Login In</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+      
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="stylesheet" href="../styles/signup.css">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="../images/favicon-32x32.png" type="image/x-icon">
     </head>
-    <body class="wrapper">
-<header>
-
-</header>
-<main>
-    <div id="mock-image">
-        <img class="mock-img" src="../images/pensive-tiny-author-thinking-script-using-retro-typewriter-with-paper_179970-3198.jpg" alt="novelist-writing">
-    </div>
-    <div class="register-form">
-        <div class="intro-text">
-            <h1>Welcome To Diary-App</h1>
+    <body>
+        <div class="home">
+            <a href="../../index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
         </div>
-        <form id="form" action="" method="post">
-            <div id="error"></div>
-            <div class="firstname">
-                <label for="firstname"></label>
-                <input type="text" id="firstname" name="firstname" placeholder="First Name">
-            </div>
-            <div class="lastname">
-                <label for="firstname"></label>
-                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
-            </div>
-            <div class="username">
-                <label for="username"></label>
-                <input type="text" id="username" name="username" placeholder="Username" required>
-            </div>
-            <div class="email">
-                <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="Email@gmail.com" required>
-            </div>
-            <div class="password">
-                <label for="password"></label>
-                <input id="myInput" type="password" id="password" name="password" placeholder="Password" required>
-                <input type="checkbox" onclick="myFunction()"> <span>Show Password</span>
-            </div>
-            <div class="login-details">
-                <div class="signin">
-                    <a href=""><p>Already Have An Account? Sign In Here</p></a>
-                </div>
-               <div>
-                <button type="submit" class="btn">Create Account</button>
-               </div>
-               
-            </div>
-        </form>
-    </div>
-</main>
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
+        <div class="container_wrapper">
+            <div class="form__card">
+                <div class="form__card__body">
+                    <div class="form__text">
+<span class="form--text">Register</span>
+                    </div>
+                    
+                    <form class="form"  action="" method="" id="form">
+                        <div class="form--fname">
+                            <label for="fname">Firstname</label>
+                            <input type="text" name="fname" placeholder="John" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form--lname">
+                            <label for="lname">Lastname</label>
+                            <input type="text" name="lname" placeholder="Doe" required>
+                            <div class="error"></div>
+                        </div>
+<div class="form--username">
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="John_Doe" required>
+    <div class="error"></div>
 </div>
-       
-        <script src="../lib/signup.js" async defer></script>
+<div class="form--email">
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="Doe@gmail.com" required>
+    <div class="error"></div>
+</div>
+<div class="form--password">
+    <label for="email">Password</label>
+    <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+   <i class="far fa-eye las--visibility" id="togglePassword"></i>
+    <div class="error"></div>
+</div>
+
+<div class="btn btn--submit">
+    <a href="../HTML/user/user.index.html"><input type="button" value="Register"></a>
+</div>
+<div class="form__password__register">
+    <div class="user--create">
+        <span> <a href="../HTML/signin.html">Login</a></span>
+    </div>
+    <div class="user--forgot">
+        <span><a href="#">Forgot password</a></span>
+    </div>
+</div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <script src="../lib/signup.js"></script>
     </body>
 </html>
