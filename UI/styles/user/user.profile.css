@@ -1,3 +1,8 @@
+.header__logo h1{
+    color: #f7f7f7;
+    font-family: 'Akaya Telivigala', cursive;
+    margin-left:10px;
+}
 .user__profile img{
     cursor: pointer;
     border: 2px solid #05668D;
@@ -48,4 +53,8 @@
     padding: 1rem;
     color: #fff;
     border-radius: .5rem;
+}
+.sidebar__nav--bar a i{
+    margin-right: 8px;
+    display: initial;
 }
