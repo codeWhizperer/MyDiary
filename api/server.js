@@ -6,7 +6,7 @@ require('dotenv').config()
 
 const port =5000
 //Middleware
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(
   bodyParser.urlencoded({
     extended: true,

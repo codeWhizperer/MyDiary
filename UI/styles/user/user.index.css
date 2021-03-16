@@ -15,80 +15,11 @@ body{
     box-sizing: border-box;
     font-size: 1.6rem;
 }
-.header{
-    display: flex;
-    justify-content: space-between;
-    height: 77px;
-    background-color: rgb(1, 63, 118);
-}
-.header__logo h1{
+
+header h1{
+    text-align: center;
     color: #f7f7f7;
     font-family: 'Akaya Telivigala', cursive;
-    margin-left:10px;
-}
-.nav--dropdown{
-    position: relative;
-    min-width: 10rem;
-}
-
-.dropdown--content{
-    display: none;
-    position: absolute;
-}
-.nav--dropdown:hover .dropdown--content{
-display: block;
-}
-.nav--menu{
-    font-size: 3rem;
-}
-.dropdown--content li{
-    list-style: none;
-}
-.dropdown--content li a{
-    text-decoration: none;
-    color: #fff;
-}
-span i {
-    color: #fff;
-}
-.icon{
-    display: contents;
-}
-.container{
-    display: flex;
-    height: calc(100% - 77px);
-}
-.sidebar{
-    flex: 2;
-    height: 88vh;
-    background-color: rgb(44, 100, 150);
-}
-.sidebar__nav--bar li{
-list-style: none;
-}
-.sidebar__nav--bar a{
-    text-decoration:none;
-    color: #f0f8ff;
-    display: block;
-    padding: 1.8rem;
-    border-bottom: 1px solid #f0f8ff;
-    transition: all ease-out;
-}
-.sidebar__nav--bar a i{
-    margin-right: 8px;
-    display: initial;
-}
-
-.sidebar__nav--bar a:hover{
-    background-color:rgb(15, 93, 161) ;
-    transform: translateY(5px);
-}
-.user{
-    flex: 8;
-    height: 88vh;
-    border: 1px solid green;
-    overflow-y: scroll;
-    padding: 1rem;
 }
 .user__page-title span i{
     color: black;
@@ -97,6 +28,7 @@ list-style: none;
     text-align: center;
     margin-bottom: 2rem;
     font-family: 'Akaya Telivigala', cursive;
+    text-transform: uppercase;
 }
 .user__posts{
     padding: 2rem;
@@ -117,6 +49,7 @@ list-style: none;
         color: #fff;
         padding: 1rem;
         border-radius: .5rem;
+        margin-right: 5px;
     }
 .btn-delete{
     text-decoration: none;
@@ -124,4 +57,69 @@ list-style: none;
     color: #fff;
     padding: 1rem;
     border-radius: .5rem;
+    margin-right: 5px;
+}
+.btn-view{
+    text-decoration: none;
+    background-color:#5bc0de;
+    color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  line-height: 80px;
+}
+.sidenav  i{
+    margin-right: 20px;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+main {
+  padding: 10px;
+}
+.span{
+    font-size: 50px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
