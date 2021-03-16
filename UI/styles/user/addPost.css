@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
-.header__logo h1{
+body{
+    background-color: #f7f7f7;
+}
+/* .header__logo h1{
     color: #f7f7f7;
     font-family: 'Akaya Telivigala', cursive;
     margin-left:10px;
@@ -56,4 +59,83 @@ form{
 .sidebar__nav--bar a i{
     margin-right: 8px;
     display: initial;
+} */
+.container{
+    text-align: center;
+}
+
+form{
+    width: 100%;
+    height: 80vh;
+}
+label{
+    display: none;
+}
+input{
+    width: 80%;
+    padding: 10px;
+    outline: none;
+    font-size: 1.6rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 1.6rem;
+}
+/* input:focus{
+    outline: 3px solid hsl(195, 53%, 79%);
+} */
+textarea{
+    width: 80%;
+    height: 50vh;
+    padding: 10px;
+    outline: none;
+    font-size: 3rem;
+
+}
+textarea:focus{
+    outline: 3px solid hsl(195, 53%, 79%);
+}
+
+.user__form__title{
+margin-bottom: 20px;
+}
+.user__page-title{
+    text-transform: uppercase;
+}
+.user__page-title i{
+    margin-left: 5px;
+}
+.user__post--btn{
+    margin-top: 15px;
+}
+.user__post--btn a{
+    text-decoration: none;
+    background-color:  #428bca;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #f7f7f7;
+}
+.user__post--btn a:hover{
+    background-color:#5bc0de; 
+}
+
+
+@media screen and (max-width:768px){
+    textarea{
+        font-size: 3rem;
+    }
+    input{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:480px){
+    input{
+        font-size: 2rem;
+    }
+    textarea{
+        font-size: 2rem;
+    }
 }

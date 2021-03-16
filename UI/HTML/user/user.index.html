@@ -17,71 +17,67 @@
         
     </head>
     <body> 
-        <header class="header">
-            <div class="header__logo">
-                <h1>Diary</h1>
-            </div>
-            <nav class="header__nav nav--dropdown">
-                <span class="nav--menu"><i class="las la-bars"></i></span>
-                <ul class="nav--list dropdown--content">
-                    <li><a href="../user/user.profile.html"><span><i class="lar la-user icon"></i></i></span>Dashboard</a></li>
-                    <li><a href="../../../index.html"><span><i class="las la-sign-out-alt icon"></i></span>Logout</a></li>
-                </ul>
-            </nav>
-        </header>
 
-      <div class="container">
-          <div class="sidebar">
-              <nav class="sidebar__nav">
-                  <ul class="sidebar__nav--bar">
-                      <li><a href="../../../index.html"><i class="las la-home"></i>Home</a></li>
-                      <li><a href="../user/user.index.html"><i class="las la-rss"></i></i>Entries</a></li>
-                      <li><a href="../user/addPost.html"><i class="las la-plus-circle"></i></i>New</a></li>
-                      <li><a href="#"><i class="las la-cog"></i>Settings</a></li>
-                    
-                  </ul>
-              </nav>
-          </div>
-          <div class="user">
-              <h1 class="user__page-title">Manage post <span><i class="las la-journal-whills"></i></span></h1>
-              <div class="user__posts">
+<header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1>DIARY APP</h1>
+        <a href="../../../index.html"><i class="la la-home"></i>Home</a>
+        <a href="../user/user.index.html"><i class="la la-rss"></i> Entry</a>
+        <a href="../user/addPost.html"><i class="la la-blog"></i>New Entry</a>
+        <a href="./user.profile.html"><i class="la la-user"></i>Dashboard</a>
+        <a href="#"><i class="la la-cog"></i>Help</a>
+       
+      </div>
+      
+      <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><i class="span la la-bars"></i></span>
+</header>
+
+          
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+          <main>
+            <div class="user">
+                <h1 class="user__page-title">Manage post <span><i class="las la-journal-whills"></i></span></h1>
+                <div class="user__posts">
+                    <div class="user__post--title">
+                        <h2>What is Lorem Ipsum?</h2>
+                    </div>
+                    <div class="user__post--date">
+                        <span class="post--date" ><time  class="post--date" datetime="2020-09-04">2020-09-04</time></span>
+                    </div>
+                    <div class="user__post--description">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="btn btn--view btn--edit btn--delete">
+                        <a class="btn-edit" href="../user/editPost.html">Edit</a>
+                        <a class="btn-delete" href="">Delete</a>
+                        <a class="btn-view" href="">View</a>
+                    </div>
+                </div>
+  
+                <div class="user__posts">
                   <div class="user__post--title">
                       <h2>What is Lorem Ipsum?</h2>
                   </div>
                   <div class="user__post--date">
                       <span class="post--date" ><time  class="post--date" datetime="2020-09-04">2020-09-04</time></span>
+                      
                   </div>
                   <div class="user__post--description">
                       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                   </div>
                   <div class="btn btn--view btn--edit btn--delete">
-                      <a class="btn-edit" href="../user/editPost.html">Edit</a>
+                      <a class="btn-edit" href="">Edit</a>
                       <a class="btn-delete" href="">Delete</a>
+                      <a class="btn-view" href="">View</a>
                   </div>
               </div>
+             
+          
+          </div>
+          </main>
 
-              <div class="user__posts">
-                <div class="user__post--title">
-                    <h2>What is Lorem Ipsum?</h2>
-                </div>
-                <div class="user__post--date">
-                    <span class="post--date" ><time  class="post--date" datetime="2020-09-04">2020-09-04</time></span>
-                    
-                </div>
-                <div class="user__post--description">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </div>
-                <div class="btn btn--view btn--edit btn--delete">
-                    <a class="btn-edit" href="">Edit</a>
-                    <a class="btn-delete" href="">Delete</a>
-                </div>
-            </div>
-           
-        
-        </div>
-        <!--  -->
-      </div>
-
-        <script src="" async defer></script>
+        <script src="../../lib/user.index.js" async defer></script>
     </body>
 </html>

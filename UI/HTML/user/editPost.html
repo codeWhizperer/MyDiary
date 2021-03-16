@@ -17,55 +17,48 @@
         <link rel="stylesheet" href="../../styles/user/addPost.css">
     </head>
     <body> 
-        <header class="header">
-            <div class="header__logo">
-                <h1>Diary</h1>
-            </div>
-            <nav class="header__nav nav--dropdown">
-                <span class="nav--menu"><i class="las la-bars"></i></span>
-                <ul class="nav--list dropdown--content">
-                    <li><a href="../user/user.profile.html"><span><i class="lar la-user icon"></i></i></span>Dashboard</a></li>
-                    <li><a href="../../index.html"><span><i class="las la-sign-out-alt icon"></i></span>Logout</a></li>
-                </ul>
-            </nav>
+        <header>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <h1>DIARY APP</h1>
+                <a href="#"><i class="la la-home"></i>Home</a>
+                <a href="../user/user.index.html"><i class="la la-rss"></i>Entry</a>
+                <a href="./addPost.html"><i class="la la-blog"></i>New Entry</a>
+                <a href="./user.profile.html"><i class="la la-user"></i>Dashboard</a>
+                <a href="#"><i class="la la-cog"></i>Help</a>
+               
+              </div>
+              
+              <!-- Use any element to open the sidenav -->
+              <span onclick="openNav()"><i class="span la la-bars"></i></span>
         </header>
-
-      <div class="container">
-          <div class="sidebar">
-              <nav class="sidebar__nav">
-                <ul class="sidebar__nav--bar">
-                    <li><a href="../../../index.html"><i class="las la-home"></i>Home</a></li>
-                    <li><a href="../user/user.index.html"><i class="las la-rss"></i></i>Entries</a></li>
-                    <li><a href="../user/addPost.html"><i class="las la-plus-circle"></i></i>New</a></li>
-                    <li><a href="#"><i class="las la-cog"></i>Settings</a></li>
-                  
-                </ul>
-              </nav>
-          </div>
-          <div class="user">
-              <h1 class="user__page-title"> Edit Post<span><i class="las la-journal-whills"></i></span></h1>
-             
+        
+<main>
+    <div class="container">
+        <div class="user">
+            <h1 class="user__page-title"> Edit Entry<span><i class="las la-journal-whills"></i></span></h1>
+           
 <form class="user__form" action="" method="">
-    <div class="user__form__Title">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="" placeholder="Title">
-    </div>
+  <div class="user__form__title">
+      <label for="title"></label>
+      <input type="text" name="title" id="" placeholder="Title">
+  </div>
 
 <div class="user__form__description">
-    <label for="description">Description</label>
-    <textarea name="description" id="description" placeholder="Type something here"></textarea>
+  <label for="description"></label>
+  <textarea name="description" id="description" placeholder="Type something here......"></textarea>
 </div>
 <div class="user__post--btn">
-    <a class="btn btn-success" href="#">Save</a>
+  <a class="btn btn--success" href="#">Save Entry</a>
 </div>
 
 </form>
-            
-          
-        
-        </div>
-      </div>
 
-        <script src="" async defer></script>
+      </div>
+    </div>
+</main>
+      
+
+        <script src="../../lib/addPost.js" async defer></script>
     </body>
 </html>
