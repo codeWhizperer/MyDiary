@@ -75,14 +75,11 @@ label{
     font-size: 2rem;
     color: #0275d8;
 }
-.btn--submit  a input{ 
-  font-size: 1.5rem;
-  background-color:  #0275d8;
-  color: #fff;
-  outline: none;
-  text-transform: uppercase;
-  border-radius: .7rem;
-  cursor: pointer;
+.btn--submit{
+  width: 100%;
+  color:#fff;
+  background-color: #0275d8;
+  padding: 6px;
 }
 .home{
     font-size: 3rem;
