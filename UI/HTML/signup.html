@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login In</title>
+        <title>Register</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,36 +19,33 @@
         <div class="container_wrapper">
             <div class="form__card">
                 <div class="form__card__body">
-                    <div class="form__text">
+                    <!-- error--modal   -->
+                    <div class="error--modal error--transition"></div>
+                    <!--error--modal  -->
+                    <div class="form__text"> 
 <span class="form--text">Register</span>
                     </div>
-                    
                     <form class="form"  action="" method="" id="form">
                         <div class="form--fname">
                             <label for="fname">Firstname</label>
-                            <input type="text" name="fname" placeholder="John" required>
-                            <div class="error"></div>
+                            <input id="firstname" type="text" name="fname" placeholder="John" required>
                         </div>
                         <div class="form--lname">
                             <label for="lname">Lastname</label>
-                            <input type="text" name="lname" placeholder="Doe" required>
-                            <div class="error"></div>
+                            <input id="lastname" type="text" name="lname" placeholder="Doe" required>
                         </div>
 <div class="form--username">
     <label for="username">Username</label>
-    <input type="text" name="username" placeholder="John_Doe" required>
-    <div class="error"></div>
+    <input id="username" type="text" name="username" placeholder="John_Doe" required>
 </div>
 <div class="form--email">
     <label for="email">Email</label>
-    <input type="email" name="email" placeholder="Doe@gmail.com" required>
-    <div class="error"></div>
+    <input id="email" type="email" name="email" placeholder="Doe@gmail.com" required>
 </div>
 <div class="form--password">
-    <label for="email">Password</label>
-    <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" id="password" placeholder="Enter Your Password" required>
    <i class="far fa-eye las--visibility" id="togglePassword"></i>
-    <div class="error"></div>
 </div>
 
 <div class="btn">
@@ -74,6 +71,6 @@
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-        <script src="../lib/signup.js"></script>
+        <script src="../Client-server/signup.js"></script>
     </body>
 </html>

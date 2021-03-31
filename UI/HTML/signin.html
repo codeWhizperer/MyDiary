@@ -19,25 +19,27 @@
         <div class="container_wrapper">
             <div class="form__card">
                 <div class="form__card__body">
+                     <!-- error--modal   -->
+                     <div class="error--modal error--transition"></div>
+                     <!--error--modal  -->
                     <div class="form__text">
 <span class="form--text">Welcome Back </span>
                     </div>
                     
                     <form class="form"  action="" method="" id="form">
 <div class="form--email">
-    <label for="email">Email</label>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <div class="error"></div>
+    <label for="email">Username</label>
+    <input id="username" type="text" name="username" placeholder="John_Doe" required>
 </div>
 <div class="form--password">
-    <label for="email">Password</label>
-    <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+    <label for="password">Password</label>
+    <input  type="password" name="password" id="password" placeholder="Enter Your Password" required>
    <i class="far fa-eye las--visibility" id="togglePassword"></i>
-    <div class="error"></div>
+
 </div>
 
 <div class="btn">
-    <button  class="btn--submit" type="submit">Submit</button>
+    <button id="sign-in-btn" class="btn--submit" type="submit">Submit</button>
 </div>
 <div class="form__password__register">
     <div class="user--create">
@@ -58,6 +60,6 @@
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-        <script src="../lib/signin.js"></script>
+        <script src="../Client-server/signin.js"></script>
     </body>
 </html>

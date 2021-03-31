@@ -7,7 +7,7 @@ const getOne = async (request,response) =>{
     try {
         const {rows} = await pool.query(findQuery, [request.params.id, request.user.id]);
         if (!rows[0]) {
-            return res.status(404).send({'message': 'reflection not found'});
+            return res.status(404).send({'message': 'Entry not found'});
           }
 return response.status(200).json(rows[0])
         
@@ -19,9 +19,11 @@ return response.status(200).json(rows[0])
 
 const getAll = async (request, response) => {
     const findQuery = `SELECT * FROM diary WHERE user_id = $1`;
+    const requests = await pool.query(findQuery, [request.user.id])
     try {
-        const {rows, rowCount} = await pool.query(findQuery, [request.user.id]);
-        return response.status(200).send({rows, rowCount})
+        if(!requests.rows.length) return response.status(200).json({message:"No Response"})
+        // const {rows, rowCount} = await pool.query(findQuery, [request.user.id]);
+         return response.status(200).json({request:requests.rows , message: "Here are your entry"})
     } catch (error) {
         if(error){
           return   response.status(404).send(error);
@@ -35,7 +37,7 @@ const create = async (request, response) =>{
     const values = [request.body.title, request.body.description, request.user.id];
     try {
        const data = await pool.query(createQuery, values);
-return response.status(201).send({data: data.rows[0], message: 'Entry Created Successfully!'});
+return response.status(201).json({data: data.rows[0], message: 'Entry Created Successfully!'});
        
     } catch (error) {
         if(error){
