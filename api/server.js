@@ -1,12 +1,13 @@
 const { request } = require('express');
 const express = require('express')
+const cors = require("cors")
 var bodyParser = require('body-parser')
 const app = express();
 require('dotenv').config()
 
 const port =5000
 //Middleware
-app.use(express.json())
+app.use(cors());
 app.use(
   bodyParser.urlencoded({
     extended: true,

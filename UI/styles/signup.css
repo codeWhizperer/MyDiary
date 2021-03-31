@@ -67,12 +67,12 @@ label{
 }
 .user--create span a{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #0275d8;
 }
 .user--forgot span a{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #0275d8;
 }
 
@@ -253,5 +253,61 @@ input{
     .las--visibility{
       top: 4rem;
     }
+    .user--forgot span a{
+      font-size: 1.7rem;
+    }
+    .user--create span a{
+font-size: 1.7rem;
+    }
 
+}
+
+/* Error modal */
+.error--modal{
+  color: #EBF2FA;
+  opacity: 0;
+  top: 0;
+  z-index: 31;
+  padding: 16px;
+  width: 100%;
+  border-radius: 15px;
+  transform: translateY(-50px);
+}
+.error--modal p {
+  text-align: center;
+  margin: 0;
+}
+
+.user-error-open{
+  transform: translateY(0);
+  opacity: 1;
+  background-color: blue;
+} 
+
+.error--transition {
+  transition: all .6s ease;
+}
+
+.error-modal-open {
+  transform: translateY(0);
+  opacity: 1;
+} 
+
+ .user-red{
+  background-color: #f74646;
+  transform: translateY(0);
+  font-size: 1.2rem;
+  opacity: 1;
+}
+
+.user-green{
+  background-color: #008000;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.user-error-open{
+  transform: translateY(0);
+  opacity: 1;
+  background-color: blue;
 }

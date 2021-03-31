@@ -25,7 +25,7 @@
                 <a href="../user/user.index.html"><i class="la la-rss"></i>Entry</a>
                 <a href="./addPost.html"><i class="la la-blog"></i>New Entry</a>
                 <a href="./user.profile.html"><i class="la la-user"></i>Dashboard</a>
-                <a href="#"><i class="la la-cog"></i>Help</a>
+                <a href="../../../index.html"><i class="las la-sign-out-alt"></i></i>LogOut</a>
                
               </div>
               
@@ -35,13 +35,16 @@
         
 
       <div class="container">
+           <!-- error--modal   -->
+           <div class="error--modal error--transition"></div>
+           <!--error--modal  -->
           <div class="user">
               <h1 class="user__page-title"> New Entry<span><i class="las la-journal-whills"></i></span></h1>
              
-<form class="user__form" action="" method="">
+<form id="form" class="user__form" action="" method="">
     <div class="user__form__title">
         <label for="title"></label>
-        <input type="text" name="title" id="" placeholder="Title">
+        <input type="text" name="title" id="title" placeholder="Title">
     </div>
 
 <div class="user__form__description">
@@ -49,7 +52,7 @@
     <textarea name="description" id="description" placeholder="Type something here......"></textarea>
 </div>
 <div class="user__post--btn">
-    <a class="btn btn--success" href="#">Save Entry</a>
+    <button id="submitForm" class="btn btn--success">Save Entry</button>
 </div>
 
 </form>
@@ -58,7 +61,12 @@
         
         </div>
       </div>
-
-        <script src="../../lib/addPost.js" async defer></script>
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+        <script src="../../Client-server/user_post.js" async defer></script>
+        <script src="../../lib/addPost.js"></script>
     </body>
 </html>

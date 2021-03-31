@@ -10,7 +10,7 @@ const signup = async  (request, response)=>{
     try {
         //1. destructure req.body
 const {firstname, lastname, username, email, password} = request.body;
-if(!username || !password){
+if(!firstname||!lastname||!email||!username || !password){
  return response.status(400).json({message: 'Some values are missing'})
  }
     //2. validate user input
@@ -35,7 +35,10 @@ return jwt.sign({userId: newUser.rows[0].id},
           if(error){
               return response.status(401).json({message:error})
           }
-          return response.status(201).json({user:newUser.rows, message:'User Register Successfully', token})
+          return response.status(201).json({user:newUser.rows[0]['username'],
+           userId:newUser.rows[0]['id'],
+            message:'User Register Successfully',
+             usertoken:token})
       })
 
 } catch (error) {
@@ -60,12 +63,12 @@ const login = async (request, response) =>{
 const user = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
 
         // 4. compare password
-if(user.rows.length === 0){
-    return response.status(401).json({message:'Username or Password Incorrect.'})
+if(!user.rows[0]){
+    return response.status(401).json({message:'User doesn\'t exist'})
 }       
 const validPassword = await bcrypt.compare(password, user.rows[0].password)
 if(!validPassword){
-return response.status(404).json({message:'Username or Password Incorrect.'})
+return response.status(401).json({message:'Password Incorrect'})
 }
 
 // 5. jwt
@@ -73,7 +76,10 @@ jwt.sign({userId:user.rows[0].id}, process.env.TOKEN_SECRET, {expiresIn: '7days'
 if(error){
     return response.status(400).json({message: error})
 }
-return response.status(200).json({message:'User Successfully Logged In', info:token})
+return response.status(200).json({message:'User Successfully LoggedIn', 
+userId:user.rows[0]["id"], 
+ user:user.rows[0]["username"],
+  usertoken:token})
 })
         
     } catch (error) {
