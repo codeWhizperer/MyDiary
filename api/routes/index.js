@@ -8,17 +8,19 @@ const Diary = require('../controllers/diary')
 // path
 router.post('/users/signup', Authentication.signup);
 
-router.post('/users/login', Authentication.login)
+router.post('/users/login', Authentication.login);
 
-router.post('/user/new', Auth.verifyToken, Diary.create)
+router.post('/user/new', Auth.verifyToken, Diary.create);
 
-router.get('/user/entry', Auth.verifyToken, Diary.getAll)
+router.patch('/user/update/:id', Auth.verifyToken, Diary.updateProfile);
 
-router.get('/user/entry/:id', Auth.verifyToken, Diary.getOne)
+router.get('/user/entry', Auth.verifyToken, Diary.getAll);
 
-router.patch('/user/entry/modify/:id', Auth.verifyToken, Diary.updateOne)
+router.get('/user/entry/:id', Auth.verifyToken, Diary.getOne);
 
-router.delete('/user/entry/delete/:id', Auth.verifyToken, Diary.deleteOne)
+router.patch('/user/entry/modify/:id', Auth.verifyToken, Diary.updateOne);
+
+router.delete('/user/entry/delete/:id', Auth.verifyToken, Diary.deleteOne);
 
 
 

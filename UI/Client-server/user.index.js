@@ -54,11 +54,5 @@ if(response.message === "No Response"){
   
   getAllRequest();
   
-  // edit a diary post
-  function edit(){
-    // fetch data by id
-    // fetch('url/api/v1/user/:id')
-  }
-  
   
   
