@@ -82,7 +82,30 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
         }
     }
 
-module.exports = {create, getAll, getOne, updateOne, deleteOne}
+    const updateProfile = async(request, response) =>{
+        const findQuery = `SELECT * FROM users WHERE id= $1`
+        const id = request.params.id;
+        try {
+            const formerProfile = await pool.query(findQuery, [id])
+            if(!formerProfile.rows.length){
+                return response.status(404).json({message:'User not found'})
+            }
+
+            const formerProfileToUpdate = formerProfile.rows[0];
+            console.log(formerProfile.rows.length)
+            const username = request.body.username || formerProfileToUpdate.username;
+            const email = request.body.email || formerProfileToUpdate.email;
+            const updatequery = `UPDATE users SET username = $1, email= $2 WHERE id= $3 RETURNING *`
+            const values = [username, email, id]
+            const newProfile = await pool.query(updatequery,values)
+            return response.status(200).json({data:newProfile.rows, message:"Profile Successfully updated"})
+        } catch (error) {
+            return response.status(404).json({message: error})
+        }
+
+    }
+
+module.exports = {create, getAll, getOne, updateOne, deleteOne, updateProfile}
 
 
 

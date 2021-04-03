@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
 }
 #intro-message{
     background-image: url("https://cdn.pixabay.com/photo/2015/10/02/15/00/diary-968592_960_720.jpg");
@@ -21,8 +23,10 @@ html{
 header{
     display: flex;
     justify-content: space-around;
-    padding-bottom: 30px;
+    padding: 10px;
+
 }
+
 
 nav ul{
     display: inline-flex;
@@ -41,12 +45,19 @@ nav ul li a:hover{
 #mobile-nav{
 display: none;
 }
+#logo h1{
+  font-family: 'Akaya Telivigala', cursive;
+  font-size: 1.4rem;
+}
 /*mobile nav css*/
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
+  }
+  .dropbtn i{
+    font-size: 1.3rem;
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -76,32 +87,35 @@ display: none;
 /*Mobile nav css stops here*/
 
 .image-caption{
+  font-family: 'Akaya Telivigala', cursive;
     text-align: center;
     position: relative;
-    top: 150px;
+    top: 14rem;
 }
 
 .image-caption h1{
-    font-size: 3rem;
+    font-size: 5rem;
     color: #fff;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 .start{
     text-decoration: none;
-    background-color: #f4511e;
+    background-color: red;
     border: none;
     color: white;
-    padding: 2px 4px;
+    padding: 4px 4px;
     text-align: center;
     font-size: 2rem;
     margin: 4px 2px;
     opacity: 0.6;
-    transition: 0.3s
+    transition: 0.3s;
+    border-radius: 5px;
 
 }
 
 .start:hover{
-    opacity: 1;
+    opacity: .5;
 }
 #intro-message{
     margin-bottom: 80px;
@@ -109,6 +123,7 @@ display: none;
 
 #About{
     margin-bottom: 80px;
+    padding: 10px;
 }
 #About h4{
     text-align: center;
@@ -140,18 +155,19 @@ display: none;
 footer{
     display: flex;
     justify-content: space-around;
-    background-color:#000000;
+    /* background-color:#000000; */
 }
 .social-link{
     margin-left:30px;
 }
+.social-item{
+  font-size: 32px;
+  color: #000;
+}
 #project{
-color: #fff;
+padding: 10px;
 }
-#phone-number i{
-    display: flex;
-    color: #fff;
-}
+
 
 
 
@@ -285,6 +301,9 @@ color: #fff;
         padding: 20px 20px;
         font-weight: 400;
     }
+    .image-caption h1{
+      font-size: 3rem;
+    }
 
 }
 
@@ -299,7 +318,12 @@ color: #fff;
         display: block;
         margin-right: 60px;
     }
-
+    #logo {
+      margin-right: 6rem;
+    }
+    #logo h1{
+      font-size: 1.5rem;
+    }
  .image-caption h1{
      font-size: 1.5rem;
  }
@@ -344,3 +368,6 @@ margin: 10px;
    margin: 20px;
  }
 }
+
+
+
