@@ -12,7 +12,7 @@ router.post('/users/login', Authentication.login);
 
 router.post('/user/new', Auth.verifyToken, Diary.create);
 
-router.patch('/user/update/:id', Auth.verifyToken, Diary.updateProfile);
+router.put('/user/update/:id', Auth.verifyToken, Diary.updateProfile);
 
 router.get('/user/entry', Auth.verifyToken, Diary.getAll);
 

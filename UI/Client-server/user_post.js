@@ -72,3 +72,7 @@ if(title.trim() === '' || description.trim() === ''){
 
 })
 
+// function contentEditable(){
+
+// }
+
