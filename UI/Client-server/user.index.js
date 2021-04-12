@@ -35,17 +35,15 @@ if(response.message === "No Response"){
   datas.forEach((data)=>{
     const newDiv = document.createElement('div')
     newDiv.classList.add('user__posts')
-    newDiv.innerHTML = `
-    <p class="user__post--title title-${data.id}"><b>Title: </b>${data.title}</p><br>
-                        <p class="post--date"  ><b>Time: </b>${data.createdon}</p><br>
-                        <p class="user__post--description description-${data.id}" ><b>Description</b><br>${data.description}</p>
-                        <button class="btn btn-edit" onClick='edit(${data.id})'> Edit</button>
+    newDiv.innerHTML += `
+    <p><b>Title:</b></p><p class="user__post--title title-${data.id} margin">${data.title}</p>
+                        <p class="post--date margin"  ><b>Time: </b>${data.createdon}</p>
+                        <p><b>Description:</b></p> <p class="user__post--description description-${data.id} margin" >${data.description}</p>
+                        <button class="btn btn-edit" id="${data.id}" onclick="edit(this.id)"> Edit</button>
                         <button class="request-save-button save-${data.id}" style="display : none" onClick="">Save</button>
                         <button class="request-cancel-button cancel-${data.id}" style="display : none" onClick="">Cancel</button>
                         <button class="btn btn-delete" onClick="">Delete</button>
                         <button class="btn btn-view view-${data.id}">View</button>`
-                        
-    
     container.append(newDiv)
   })
 // this is a comment
@@ -56,14 +54,14 @@ if(response.message === "No Response"){
   getAllRequest();
 
   async function edit(id){
-    const response = await fetch(`${path}/user/entry/modify/${id}`, {
+    const response = await fetch(`${path}/api/v1/user/entry/modify/${id}`, {
       method: "PATCH",
       headers:{
         "content-type": "application/json",
         "x-access-token": `${checkToken()}`
       }
     })
-    .then(res => res.json)
+    .then(res => res.json())
     .then(response => response)
     .catch(e => e)
 if(response.message === 'Diary entry not found!'){
@@ -72,18 +70,25 @@ if(response.message === 'Diary entry not found!'){
   contentEditable(id)
 }
   }
-  
+/*
+1.
+
+
+fu
+
+
+*/
 
 
 function contentEditable(id){
-  document.querySelector(`.cancel-${id}`).style.display = 'block';
-  document.querySelector(`.save-${id}`).style.display = 'block';
-  let edit = document.querySelector(`.title-${id}`)
-  edit.setAttribute('contenteditable' , 'true');
-  edit.classList.add('edit-border');
-  let editDescription = document.querySelector(`.description-${id}`)
-  editDescription.setAttribute('contenteditable' , 'true');
-  editDescription.classList.add('edit-border');
+   document.querySelector(`.cancel-${id}`).style.display = 'block';
+   document.querySelector(`.save-${id}`).style.display = 'block';
+   let edit = document.querySelector(`.title-${id}`)
+   edit.setAttribute('contenteditable' , 'true');
+   edit.classList.add('edit-border');
+   let editDescription = document.querySelector(`.description-${id}`)
+   editDescription.setAttribute('contenteditable' , 'true');
+   editDescription.classList.add('edit-border');
 }
  
 

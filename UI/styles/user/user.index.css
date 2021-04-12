@@ -172,14 +172,14 @@ main {
     font-size: 5em;
 }
 
+.edit-border{
+    box-shadow: 0 2px 11px 0 rgb(255 0 0 / 98%), 0 2px 11px 0 rgb(255 4 4 / 99%);
+}
 
 
-
-
-
-
-
-
+.margin:not(:last-child){
+    margin-bottom: 5px;
+}
 
 
 
