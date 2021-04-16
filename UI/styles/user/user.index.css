@@ -69,11 +69,17 @@ header h1{
         background-color:#0275d8;
     }
 .btn-delete{
-    background-color:#d9534f;
+    background-color:#d12923;
 }
 .btn-view{
 
-    background-color:#5bc0de;
+    background-color:#2aa2c7;
+}
+.btn-save{
+background-color:#2faacf ;
+}
+.btn-cancel{
+background-color: #d9534f;
 }
 
 

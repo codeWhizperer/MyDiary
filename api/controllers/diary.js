@@ -58,7 +58,7 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
             }
             const values = [request.body.title, request.body.description, request.params.id, request.user.id];
     const data = await pool.query(updateQuery, values);
-    return response.status(200).send({message:data.rows[0]});
+    return response.status(200).send({info: 'entry successfully updated', message:data.rows});
             
         } catch (error) {
             if(error){
