@@ -32,10 +32,10 @@ header h1{
     text-transform: uppercase;
 }
 .user__posts{
-    padding: 2rem;
+    padding: 1.2rem;
     border: 1px solid #777;
     margin-bottom: 1rem;
-    padding-right: 2rem;
+    padding-right: 1.5rem;
 }
 /* .user__posts:hover{
     transform: translate(5px, 5px);
@@ -187,7 +187,28 @@ main {
     margin-bottom: 5px;
 }
 
+ /* Error Styles */
+ .error--modal{
+opacity: 0;
+transform: translateY(-50px);
+margin: auto;
+}
+.error--modal p {
+text-align: center;
+font-size: 1.5rem;
+color: #fff;
+margin: 0;
+}
 
+.user-error-open{
+transform: translateY(0);
+opacity: 1;
+background-color: green;
+} 
+
+.error--transition {
+transition: all .6s ease;
+}
 
 
 
