@@ -43,7 +43,7 @@ if(response.message === "No Response"){
                         <button class="btn btn-save save-${data.id}" id="${data.id}" style="display : none" onClick="save(this.id)">Save</button>
                         <button class="btn btn-cancel cancel-${data.id}" id="${data.id}" style="display : none" onClick="cancel(this.id)">Cancel</button>
                         <button class="btn btn-delete" id="${data.id}" onClick="">Delete</button>
-                        <button class="btn btn-view view-${data.id}">View</button>`
+                       `
     container.append(newDiv)
   })
 // this is a comment
@@ -118,9 +118,12 @@ const response = await fetch(`${path}/api/v1/user/entry/modify/${id}`, {
 }).then(res => res.json())
   .then(response => response)
   .catch(error => error)
- if(response){
-   
- }
+let errorDisplay = document.querySelector('.error--modal')
+errorDisplay.innerHTML= `<p>Success</p>`
+errorDisplay.classList.add('user-error-open')
+setTimeout(() => {
+  errorDisplay.classList.remove('user-error-open')
+}, 1000);
 
 }
 
