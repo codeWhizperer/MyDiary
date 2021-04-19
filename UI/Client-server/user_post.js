@@ -26,7 +26,6 @@ const errorDisplay = document.querySelector('.error--modal')
 
 const checkToken = () =>{
     const token = localStorage.getItem('user-token')
-    console.log(token)
     if(token){
         return token
     }
@@ -65,7 +64,9 @@ if(title.trim() === '' || description.trim() === ''){
             errorDisplay.innerHTML = `<p>Saved!</p>`
             errorDisplay.classList.add('user-green')
             setTimeout(() => {errorDisplay.classList.remove('user-green')}, 1000);
-            form.reset()
+          return  setTimeout(() => {
+                 window.location.href = "../user/user.index.html"
+            }, 1000)
         }
 
     }

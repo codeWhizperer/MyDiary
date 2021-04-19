@@ -42,7 +42,7 @@ if(response.message === "No Response"){
                         <button class="btn btn-edit" id="${data.id}" onclick="edit(this.id)"> Edit</button>
                         <button class="btn btn-save save-${data.id}" id="${data.id}" style="display : none" onClick="save(this.id)">Save</button>
                         <button class="btn btn-cancel cancel-${data.id}" id="${data.id}" style="display : none" onClick="cancel(this.id)">Cancel</button>
-                        <button class="btn btn-delete" id="${data.id}" onClick="">Delete</button>
+                        <button class="btn btn-delete" id="${data.id}" id="${data.id}" onClick="deleteById(this.id)">Delete</button>
                        `
     container.append(newDiv)
   })
@@ -128,17 +128,27 @@ setTimeout(() => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+async function deleteById(id){
+  let currentId = id
+  document.querySelector('.post-delete-modal').style.transform = 'translateY(0)'
+   document.querySelector('.btn-delete-yes').addEventListener('click', async()=>{
+      const response = await fetch(`${path}/api/v1/user/entry/delete/${currentId}`, {
+      method : "DELETE",
+      headers:{
+        "content-type" : "application/json",
+        "x-access-token" : `${checkToken()}`
+      }
+    }).then(res => res.json())
+      .then(response => response)
+      .catch(e => e)
+      if(response.message === 'Entry successfully deleted'){
+        document.querySelector('.post-delete-modal').style.transform = 'translateY(-100em);';
+       return setTimeout(()=>{window.location.href = '../user/user.index.html'} , 1000);
+      }else{}
+  })
+  document.querySelector('.btn-delete-no').addEventListener('click', ()=>{
+    window.location.href = '../user/user.index.html'
+})
+  }
 
 
