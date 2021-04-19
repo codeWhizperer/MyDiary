@@ -74,13 +74,28 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
             if(!rows[0]){
                 return response.status(404).send({message: 'diary entry not found'})
             }
-            return response.status(200).send({message: rows, rowCount})
+            return response.status(200).send({message:"Entry successfully deleted"})
         } catch (error) {
             if(error){
                 return response.status(404).send({message: error})
             }
-        }
+        }                   
     }
+
+// const getUserProfile = async(request, response) =>{
+//     const findQuery = `SELECT * FROM users WHERE id =$1`
+//  try {
+//      const profile  = await pool.query(findQuery, [request.params.id])
+//      if(!profile.rows.length){
+// response.status(404).send({message:'invalid'})
+//      }
+//      return response.status(200).send({message:profile.rows[0]})
+//  } catch (error) {
+//      if(error){
+//          return response.status(404).send({message: 'error'})
+//      }
+//  }
+// }
 
     const updateProfile = async(request, response) =>{
         const findQuery = `SELECT * FROM users WHERE id= $1`
@@ -105,7 +120,7 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
 
     }
 
-module.exports = {create, getAll, getOne, updateOne, deleteOne, updateProfile}
+module.exports = {create, getAll, getOne, updateOne, deleteOne, getUserProfile, updateProfile}
 
 
 
