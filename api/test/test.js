@@ -1,8 +1,8 @@
-const chai = require('chai');
-const server = require('../server')
-const chaiHttp = require('chai-http');
- chai.should();
-chai.use(chaiHttp)
+// const chai = require('chai');
+// const server = require('../server')
+// const chaiHttp = require('chai-http');
+//  chai.should();
+// chai.use(chaiHttp)
 
 
 // Unit Testing of Diary End-Points.
@@ -149,19 +149,19 @@ chai.use(chaiHttp)
  
 // })
 
-describe('Functional Testing', ()=>{
-    describe('GET /', function(){
-        // #1 GET '/' 
-        it('Test GET / Welcome to HomePage', function(done){
-            chai
-            .request(server)
-            .get('/')
-            .end((error, response)=>{
-                response.should.have.status(200);
-                done();
-            })
-        })
-    })
+// describe('Functional Testing', ()=>{
+//     describe('GET /', function(){
+//         // #1 GET '/' 
+//         it('Test GET / Welcome to HomePage', function(done){
+//             chai
+//             .request(server)
+//             .get('/')
+//             .end((error, response)=>{
+//                 response.should.have.status(200);
+//                 done();
+//             })
+//         })
+//     })
     // getAll()
     // describe('GET api/v1/user/entry', function(){
     //     it('It should get all diary post', function(done){
@@ -174,4 +174,4 @@ describe('Functional Testing', ()=>{
     //         })
     //     })
     // })
-})
+// })
