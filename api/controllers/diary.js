@@ -82,20 +82,21 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
         }                   
     }
 
-// const getUserProfile = async(request, response) =>{
-//     const findQuery = `SELECT * FROM users WHERE id =$1`
-//  try {
-//      const profile  = await pool.query(findQuery, [request.params.id])
-//      if(!profile.rows.length){
-// response.status(404).send({message:'invalid'})
-//      }
-//      return response.status(200).send({message:profile.rows[0]})
-//  } catch (error) {
-//      if(error){
-//          return response.status(404).send({message: 'error'})
-//      }
-//  }
-// }
+const getUserProfile = async(request, response) =>{
+    const findQuery = `SELECT * FROM users  WHERE id=$1`
+     const value = request.params.id;
+     try {
+         const profile = await pool.query(findQuery, [value])
+         if(!profile.rows.length){
+             return response.status(404).send({message: 'user not found'})
+         }
+         return response.status(200).send({message:profile.rows})
+     } catch (error) {
+         if(error){
+             return response.status(404).send(error.message)
+         }
+     }
+}
 
     const updateProfile = async(request, response) =>{
         const findQuery = `SELECT * FROM users WHERE id= $1`
@@ -120,7 +121,7 @@ return response.status(201).json({data: data.rows[0], message: 'Entry Created Su
 
     }
 
-module.exports = {create, getAll, getOne, updateOne, deleteOne, getUserProfile, updateProfile}
+module.exports = {create, getAll, getOne, getUserProfile, updateOne, deleteOne, updateProfile}
 
 
 
