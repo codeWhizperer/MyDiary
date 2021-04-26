@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,400&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    font-family: 'Montserrat', sans-serif;
 }
 html{
     font-size: 62.5%;
@@ -221,7 +223,12 @@ transform: translateY(0);
 
 }
 
-
+@media screen and (max-width:600px) {
+ 
+.form__card__body {
+    left: 3%;
+}
+}
 
 
   @media screen and (max-width:480px){
