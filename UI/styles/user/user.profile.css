@@ -1,4 +1,53 @@
-.header__logo h1{
+.profile_wrapper{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile__image{
+    text-align: center;
+}
+.image{
+    clip-path: circle();
+    width: 200px;
+}
+.profile__content{
+    margin-top: 30px;
+}
+.profile-edit{
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+}
+.label{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.margin{
+    margin-bottom: 15px;
+}
+.profile-button{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+}
+.btn{
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-transform: uppercase;
+}
+.btn__update{
+    background-color:#2faacf ;
+    }
+    .btn__home{
+    background-color: #d9534f;
+    }
+/* .btn:not(:last-child){
+    margin-left: 20px;
+} */
+/* .header__logo h1{
     color: #f7f7f7;
     font-family: 'Akaya Telivigala', cursive;
     margin-left:10px;
@@ -57,4 +106,4 @@
 .sidebar__nav--bar a i{
     margin-right: 8px;
     display: initial;
-}
+} */
