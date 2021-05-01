@@ -90,7 +90,7 @@ const getUserProfile = async(request, response) =>{
          if(!profile.rows.length){
              return response.status(404).send({message: 'user not found'})
          }
-         return response.status(200).send({message:profile.rows})
+         return response.status(200).send({info: 'User profile', message:profile.rows })
      } catch (error) {
          if(error){
              return response.status(404).send(error.message)
