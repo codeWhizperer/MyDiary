@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 const app = express();
 require('dotenv').config()
 
-const port =5000
+const port =process.env.PORT || 5000
 //Middleware
 app.use(cors());
 app.use(
@@ -31,6 +31,6 @@ app.get('*', (req,res)=>{
 
 
 app.listen(port , (req, res)=>{
-    console.log(`Server is runnung on ${port}`)
+    console.log(`Server is runnIng on ${port}`)
 })
 module.exports = app;
