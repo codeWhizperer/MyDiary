@@ -108,7 +108,7 @@ const getUserProfile = async(request, response) =>{
             }
 
             const formerProfileToUpdate = formerProfile.rows[0];
-            console.log(formerProfile.rows.length)
+            // console.log(formerProfile.rows.length)
             const username = request.body.username || formerProfileToUpdate.username;
             const email = request.body.email || formerProfileToUpdate.email;
             const updatequery = `UPDATE users SET username = $1, email= $2 WHERE id= $3 RETURNING *`
