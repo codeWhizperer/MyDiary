@@ -31,6 +31,6 @@ app.get('*', (req,res)=>{
 
 
 app.listen(port , (req, res)=>{
-    console.log(`Server is runnIng on ${port}`)
+    console.log(`Server is running on ${port}`)
 })
 module.exports = app;

@@ -97,8 +97,8 @@ const getUserProfile = async(request, response) =>{
          }
      }
 }
-
-    const updateProfile = async(request, response) =>{
+// 
+const updateProfile = async(request, response) =>{
         const findQuery = `SELECT * FROM users WHERE id= $1`
         const id = request.params.id;
         try {
