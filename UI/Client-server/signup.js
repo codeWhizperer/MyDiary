@@ -14,7 +14,7 @@ togglePassword.addEventListener('click', function (e) {
 });
 
 
-let path = `http://localhost:5000`
+let path = `https://mydiary-app-demo.herokuapp.com`
 
 const signUp = document.getElementById('sign-up-btn').addEventListener("click", async(e)=>{
     e.preventDefault();
@@ -24,7 +24,7 @@ const signUp = document.getElementById('sign-up-btn').addEventListener("click", 
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     const signUpBody = {firstname:firstname, lastname:lastname, username:username, email:email, password:password};
-   let response =  await  fetch('http://localhost:5000/api/v1/users/signup', {
+   let response =  await  fetch(`${path}/api/v1/users/signup`, {
         method:"POST",
         body:JSON.stringify(signUpBody),
         headers:{

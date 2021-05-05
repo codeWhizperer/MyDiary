@@ -5,7 +5,7 @@ const checkToken = ()=>{
     }
     window.location.href('./signin.html')
 }
-let path = 'http://localhost:5000'
+let path = 'https://mydiary-app-demo.herokuapp.com'
 const currentId = localStorage.getItem('id')
 // console.log(currentId)
 const profileWrapper = document.querySelector('.profile_wrapper')
@@ -36,7 +36,7 @@ if(response.info === 'User profile'){
           <p contenteditable="true" id="email-${data.id}" class="profile-edit">${data.email}</p>
           <div class="profile-button">
               <button id="${data.id}" class="btn btn__update" onClick="profileUpdate(this.id)">Update</button>
-              <button class="btn btn__home" onClick="">Home</button>
+              <button class="btn btn__home" onClick="goBack()">Home</button>
           </div>
        </div>
 </div>
@@ -74,6 +74,9 @@ if(response.message === 'Profile Successfully updated'){
         successDisplay.classList.remove('user-green')
     }, 1500);
 }
+}
+function goBack(){
+    window.location.href('../../index.html')
 }
 
 

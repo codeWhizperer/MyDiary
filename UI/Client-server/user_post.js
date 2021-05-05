@@ -36,7 +36,7 @@ const checkToken = () =>{
 const userName = localStorage.getItem('username' )
 const userId = localStorage.getItem('id')
 
-let path = 'http://localhost:5000'
+let path = 'https://mydiary-app-demo.herokuapp.com'
 // Add entry
 const submitForm = document.getElementById('submitForm').addEventListener('click',async(e)=>{
 e.preventDefault();

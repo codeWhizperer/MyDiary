@@ -16,14 +16,14 @@ window.addEventListener('load',function(){
       this.classList.toggle('fa-eye-slash');
     });
     
-    let path = `http://localhost:5000`
+    let path = `https://mydiary-app-demo.herokuapp.com`
 
     const login = document.getElementById('sign-in-btn').addEventListener("click", async(e)=>{
         e.preventDefault();
         let username = document.getElementById('username').value;
         let password = document.getElementById('password').value;
         const signInBody = { username:username, password:password};
-       let response =  await  fetch('http://localhost:5000/api/v1/users/login', {
+       let response =  await  fetch(`${path}/api/v1/users/login`, {
             method:"POST",
             body:JSON.stringify(signInBody),
             headers:{

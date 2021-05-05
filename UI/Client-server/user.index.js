@@ -6,7 +6,7 @@ const checkToken = () =>{
     window.location.href =`../signin.html`
 }
 
-let path = 'http://localhost:5000'
+let path = 'https://mydiary-app-demo.herokuapp.com'
 async function getAllRequest(){
     const response = await fetch(`${path}/api/v1/user/entry`, {
       method : "GET",
