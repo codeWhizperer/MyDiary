@@ -16,8 +16,8 @@ app.use(
   })
 )
 app.use(express.json())
-app.use(express.static('../UI/styles'))
-app.use(express.static('../UI/images'))
+app.use(express.static((__dirname + '../UI/styles')))
+app.use(express.static(__dirname + '../UI/images'))
 const path = require('./routes/index')
 
 
