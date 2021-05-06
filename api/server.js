@@ -20,7 +20,7 @@ const path = require('./routes/index')
 
 
 app.get('/', (req, res)=>{
-    res.sendFile(pathIndex.join(__dirname, '/index.html'))
+    res.sendFile(pathIndex.join(__dirname, '../index.html'))
 });
 
 // middleware auth route
