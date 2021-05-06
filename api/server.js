@@ -1,9 +1,11 @@
 const { request } = require('express');
 const express = require('express')
 const cors = require("cors")
+const pathIndex = require('path')
 var bodyParser = require('body-parser')
 const app = express();
 require('dotenv').config()
+
 
 const port =process.env.PORT || 5000
 //Middleware
@@ -18,8 +20,8 @@ const path = require('./routes/index')
 
 
 app.get('/', (req, res)=>{
-    res.status(200).json('Welcome to Homepage')
-})
+    res.sendFile(pathIndex.join(__dirname, '/index.html'))
+});
 
 // middleware auth route
 app.use('/api/v1/', path)
